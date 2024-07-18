@@ -1,0 +1,4 @@
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/client/X11/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/client/X11/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/client/X11/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/client/X11/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir

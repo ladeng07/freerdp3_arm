@@ -1,0 +1,15 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/uwac0
+libs=-luwac0
+
+Name: uwac0 
+Description: uwac: using wayland as a client
+URL: http://www.freerdp.com/
+Version: 0.2.0
+Requires:
+Requires.private: wayland-client xkbcommon freerdp3
+Libs: -L${libdir} ${libs}
+Libs.private: 
+Cflags: -I${includedir}

@@ -1,0 +1,15 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/rdtk0
+libs=-lrdtk0
+
+Name: rdtk0 
+Description: rdtk:
+URL: http://www.freerdp.com/
+Version: 0.2.0
+Requires:
+Requires.private: winpr3
+Libs: -L${libdir} ${libs}
+Libs.private: 
+Cflags: -I${includedir}

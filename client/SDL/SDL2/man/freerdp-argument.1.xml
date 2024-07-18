@@ -1,0 +1,863 @@
+<refsect1>
+	<title>Options</title>
+		<variablelist>
+			<varlistentry>
+				<term><option>/a</option>:<replaceable>addin</replaceable>[,<replaceable>options</replaceable>]</term>
+				<term><option>/addin</option>:<replaceable>addin</replaceable>[,<replaceable>options</replaceable>]</term>
+				<listitem>
+					<para>Addin</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/action-script</option>:<replaceable>file-name</replaceable></term>
+				<listitem>
+					<para>Action script (default:~/.config/freerdp/action.sh)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/admin</option></term>
+				<term><option>/console</option></term>
+				<listitem>
+					<para>Admin (or console) session</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+aero</option></term>
+				<listitem>
+					<para>desktop composition (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/app</option>:program:[<replaceable>path</replaceable>|<replaceable>||alias</replaceable>],cmd:<replaceable>command</replaceable>,file:<replaceable>filename</replaceable>,guid:<replaceable>guid</replaceable>,icon:<replaceable>filename</replaceable>,name:<replaceable>name</replaceable>,workdir:<replaceable>directory</replaceable>,hidef:[on|off]</term>
+				<listitem>
+					<para>Remote application program</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/assistance</option>:<replaceable>password</replaceable></term>
+				<listitem>
+					<para>Remote assistance password</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/auto-request-control</option>:</term>
+				<listitem>
+					<para>Automatically request remote assistance input control</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+async-channels</option></term>
+				<listitem>
+					<para>Asynchronous channels (experimental) (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+async-update</option></term>
+				<listitem>
+					<para>Asynchronous update (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/audio-mode</option>:<replaceable>mode</replaceable></term>
+				<listitem>
+					<para>Audio output mode</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+auth-only</option></term>
+				<listitem>
+					<para>Authenticate only (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/auth-pkg-list</option>:<replaceable>!ntlm,kerberos</replaceable></term>
+				<listitem>
+					<para>Authentication package filter (comma-separated list, use &apos;!&apos; to exclude)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-authentication</option></term>
+				<listitem>
+					<para>Authentication (experimental) (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+auto-reconnect</option></term>
+				<listitem>
+					<para>Automatic reconnection (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/auto-reconnect-max-retries</option>:<replaceable>retries</replaceable></term>
+				<listitem>
+					<para>Automatic reconnection maximum retries, 0 for unlimited [0,1000]</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/bpp</option>:<replaceable>depth</replaceable></term>
+				<listitem>
+					<para>Session bpp (color depth) (default:16)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/buildconfig</option></term>
+				<listitem>
+					<para>Print the build configuration</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/cache</option>:[bitmap[:on|off],codec[:rfx|nsc],glyph[:on|off],offscreen[:on|off],persist,persist-file:<replaceable>filename</replaceable>]</term>
+				<listitem>
+					<para></para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/cert</option>:[deny,ignore,name:<replaceable>name</replaceable>,tofu,fingerprint:<replaceable>hash</replaceable>:<replaceable>hash as hex</replaceable>[,fingerprint:<replaceable>hash</replaceable>:<replaceable>another hash</replaceable>]]</term>
+				<listitem>
+					<para>Certificate accept options. Use with care!<sbr/> * deny         ... Automatically abort connection if the certificate does not match, no user interaction.<sbr/> * ignore       ... Ignore the certificate checks altogether (overrules all other options)<sbr/> * name         ... Use the alternate &lt;name&gt; instead of the certificate subject to match locally stored certificates<sbr/> * tofu         ... Accept certificate unconditionally on first connect and deny on subsequent connections if the certificate does not match<sbr/> * fingerprints ... A list of certificate hashes that are accepted unconditionally for a connection</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/client-build-number</option>:<replaceable>number</replaceable></term>
+				<listitem>
+					<para>Client Build Number sent to server (influences smartcard behaviour, see [MS-RDPESC])</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/client-hostname</option>:<replaceable>name</replaceable></term>
+				<listitem>
+					<para>Client Hostname to send to server</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/clipboard</option>:[[use-selection:<replaceable>atom</replaceable>],[direction-to:[all|local|remote|off]],[files-to[:all|local|remote|off]]]</term>
+				<listitem>
+					<para>Redirect clipboard:<sbr/> * use-selection:&lt;atom&gt;  ... (X11) Specify which X selection to access. Default is CLIPBOARD. PRIMARY is the X-style middle-click selection.<sbr/> * direction-to:[all|local|remote|off] control enabled clipboard direction<sbr/> * files-to:[all|local|remote|off] control enabled file clipboard directiont (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-compression</option></term>
+				<term><option>-z</option></term>
+				<listitem>
+					<para>compression (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/compression-level</option>:<replaceable>level</replaceable></term>
+				<listitem>
+					<para>Compression level (0,1,2)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+credentials-delegation</option></term>
+				<listitem>
+					<para>credentials delegation (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/d</option>:<replaceable>domain</replaceable></term>
+				<listitem>
+					<para>Domain</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-decorations</option></term>
+				<listitem>
+					<para>Window decorations (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/disp</option></term>
+				<listitem>
+					<para>Display control</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/drive</option>:<replaceable>name</replaceable>,<replaceable>path</replaceable></term>
+				<listitem>
+					<para>Redirect directory &lt;path&gt; as named share &lt;name&gt;. Hotplug support is enabled with /drive:hotplug,*. This argument provides the same function as &quot;Drives that I plug in later&quot; option in MSTSC.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+drives</option></term>
+				<listitem>
+					<para>Redirect all mount points as shares (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/dump</option>:<replaceable>record|replay</replaceable>,file:<replaceable>file</replaceable>[,nodelay]</term>
+				<listitem>
+					<para>record or replay dump</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/dvc</option>:<replaceable>channel</replaceable>[,<replaceable>options</replaceable>]</term>
+				<listitem>
+					<para>Dynamic virtual channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/dynamic-resolution</option></term>
+				<listitem>
+					<para>Send resolution updates when the window is resized</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/echo</option></term>
+				<term><option>/echo</option></term>
+				<listitem>
+					<para>Echo channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-encryption</option></term>
+				<listitem>
+					<para>Encryption (experimental) (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/encryption-methods</option>:[40,][56,][128,][FIPS]</term>
+				<listitem>
+					<para>RDP standard security encryption methods</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/f</option></term>
+				<listitem>
+					<para>Fullscreen mode (&lt;Ctrl&gt;+&lt;Alt&gt;+&lt;Enter&gt; toggles fullscreen)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+fipsmode</option></term>
+				<listitem>
+					<para>FIPS mode (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/floatbar</option>[:sticky:[on|off],default:[visible|hidden],show:[always|fullscreen|window]]</term>
+				<listitem>
+					<para>floatbar is disabled by default (when enabled defaults to sticky in fullscreen mode)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-fonts</option></term>
+				<listitem>
+					<para>smooth fonts (ClearType) (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+force-console-callbacks</option></term>
+				<listitem>
+					<para>Use default callbacks (console) for certificate/credential/... (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/frame-ack</option>:<replaceable>number</replaceable></term>
+				<listitem>
+					<para>Number of frame acknowledgement</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/args-from</option>:<replaceable>file</replaceable>|stdin|fd:<replaceable>number</replaceable>|env:<replaceable>name</replaceable></term>
+				<listitem>
+					<para>Read command line from a file, stdin or file descriptor. This argument can not be combined with any other. Provide one argument per line.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/from-stdin</option>[:force]</term>
+				<listitem>
+					<para>Read credentials from stdin. With &lt;force&gt; the prompt is done before connection, otherwise on server request.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/gateway</option>:g:<replaceable>gateway</replaceable>[:<replaceable>port</replaceable>],u:<replaceable>user</replaceable>,d:<replaceable>domain</replaceable>,p:<replaceable>password</replaceable>,usage-method:[direct|detect],access-token:<replaceable>token</replaceable>,type:[rpc|http[,no-websockets][,extauth-sspi-ntlm]|auto[,no-websockets][,extauth-sspi-ntlm]]|arm,url:<replaceable>wss://url</replaceable>,bearer:<replaceable>oauth2-bearer-token</replaceable></term>
+				<term><option>/gw</option>:g:<replaceable>gateway</replaceable>[:<replaceable>port</replaceable>],u:<replaceable>user</replaceable>,d:<replaceable>domain</replaceable>,p:<replaceable>password</replaceable>,usage-method:[direct|detect],access-token:<replaceable>token</replaceable>,type:[rpc|http[,no-websockets][,extauth-sspi-ntlm]|auto[,no-websockets][,extauth-sspi-ntlm]]|arm,url:<replaceable>wss://url</replaceable>,bearer:<replaceable>oauth2-bearer-token</replaceable></term>
+				<listitem>
+					<para>Gateway Hostname</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/gdi</option>:sw|hw</term>
+				<listitem>
+					<para>GDI rendering</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/geometry</option></term>
+				<listitem>
+					<para>Geometry tracking channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+gestures</option></term>
+				<listitem>
+					<para>Consume multitouch input locally (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/gfx</option>[:[progressive[:on|off]|RFX[:on|off]|AVC420[:on|off]AVC444[:on|off]],mask:<replaceable>value</replaceable>,small-cache[:on|off],thin-client[:on|off],progressive[:on|off]]]</term>
+				<listitem>
+					<para>RDP8 graphics pipeline</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-grab-keyboard</option></term>
+				<listitem>
+					<para>Grab keyboard (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-grab-mouse</option></term>
+				<listitem>
+					<para>Grab mouse (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/h</option>:<replaceable>height</replaceable></term>
+				<listitem>
+					<para>Height (default:768)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-heartbeat</option></term>
+				<listitem>
+					<para>Support heartbeat PDUs (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/help</option></term>
+				<term><option>/?</option></term>
+				<listitem>
+					<para>Print help</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+home-drive</option></term>
+				<listitem>
+					<para>Redirect user home as share (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/ipv4</option>[:[:force]]</term>
+				<term><option>/4</option>[:[:force]]</term>
+				<listitem>
+					<para>Prefer IPv4 AAA record over IPv6 A record</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/ipv6</option>[:[:force]]</term>
+				<term><option>/6</option>[:[:force]]</term>
+				<listitem>
+					<para>Prefer IPv6 AAA record over IPv4 A record</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/kbd</option>:[layout:[0x<replaceable>id</replaceable>|<replaceable>name</replaceable>],lang:<replaceable>0x<replaceable>id</replaceable></replaceable>,fn-key:<replaceable>value</replaceable>,type:<replaceable>value</replaceable>,subtype:<replaceable>value</replaceable>,unicode[:on|off],remap:<replaceable>key1</replaceable>=<replaceable>value1</replaceable>,remap:<replaceable>key2</replaceable>=<replaceable>value2</replaceable>,pipe:<replaceable>filename</replaceable>]</term>
+				<listitem>
+					<para>Keyboard related options:<sbr/> * layout: set the keybouard layout announced to the server<sbr/> * lang: set the keyboard language identifier sent to the server<sbr/> * fn-key: Function key value<sbr/> * pipe: Name of a named pipe that can be used to type text into the RDP session<sbr/></para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/kerberos</option>:[kdc-url:<replaceable>url</replaceable>,lifetime:<replaceable>time</replaceable>,start-time:<replaceable>time</replaceable>,renewable-lifetime:<replaceable>time</replaceable>,cache:<replaceable>path</replaceable>,armor:<replaceable>path</replaceable>,pkinit-anchors:<replaceable>path</replaceable>,pkcs11-module:<replaceable>name</replaceable>]</term>
+				<listitem>
+					<para>Kerberos options</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/load-balance-info</option>:<replaceable>info-string</replaceable></term>
+				<listitem>
+					<para>Load balance info</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/list</option>:[kbd|kbd-scancode|kbd-lang[:<replaceable>value</replaceable>]|smartcard[:[pkinit-anchors:<replaceable>path</replaceable>][,pkcs11-module:<replaceable>name</replaceable>]]|monitor|tune]</term>
+				<listitem>
+					<para>List available options for subcommand (default:List available options for subcommand)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/log-filters</option>:<replaceable>tag</replaceable>:<replaceable>level</replaceable>[,<replaceable>tag</replaceable>:<replaceable>level</replaceable>[,...]]</term>
+				<listitem>
+					<para>Set logger filters, see wLog(7) for details</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/log-level</option>:[OFF|FATAL|ERROR|WARN|INFO|DEBUG|TRACE]</term>
+				<listitem>
+					<para>Set the default log level, see wLog(7) for details</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/max-fast-path-size</option>:<replaceable>size</replaceable></term>
+				<listitem>
+					<para>Specify maximum fast-path update size</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/max-loop-time</option>:<replaceable>time</replaceable></term>
+				<listitem>
+					<para>Specify maximum time in milliseconds spend treating packets</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+menu-anims</option></term>
+				<listitem>
+					<para>menu animations (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/microphone</option>[:[sys:<replaceable>sys</replaceable>,][dev:<replaceable>dev</replaceable>,][format:<replaceable>format</replaceable>,][rate:<replaceable>rate</replaceable>,][channel:<replaceable>channel</replaceable>]]</term>
+				<term><option>/mic</option>[:[sys:<replaceable>sys</replaceable>,][dev:<replaceable>dev</replaceable>,][format:<replaceable>format</replaceable>,][rate:<replaceable>rate</replaceable>,][channel:<replaceable>channel</replaceable>]]</term>
+				<listitem>
+					<para>Audio input (microphone)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/monitors</option>:<replaceable>id</replaceable>[,<replaceable>id</replaceable>[,...]]</term>
+				<listitem>
+					<para>Select monitors to use</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-mouse-motion</option></term>
+				<listitem>
+					<para>Send mouse motion (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+mouse-relative</option></term>
+				<listitem>
+					<para>Send mouse motion with relative addressing (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/mouse</option>:[relative:[on|off],grab:[on|off]]</term>
+				<listitem>
+					<para>Mouse related options:<sbr/> * relative:   send relative mouse movements if supported by server<sbr/> * grab:       grab the mouse if within the window</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/multimon</option>[:force]</term>
+				<listitem>
+					<para>Use multiple monitors</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+multitouch</option></term>
+				<listitem>
+					<para>Redirect multitouch input (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-multitransport</option></term>
+				<listitem>
+					<para>Support multitransport protocol (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-nego</option></term>
+				<listitem>
+					<para>protocol security negotiation (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/network</option>:[invalid|modem|broadband|broadband-low|broadband-high|wan|lan|auto]</term>
+				<listitem>
+					<para>Network connection type</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/nsc</option></term>
+				<term><option>/nscodec</option></term>
+				<listitem>
+					<para>NSCodec support</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/orientation</option>:[0|90|180|270]</term>
+				<listitem>
+					<para>Orientation of display in degrees</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+old-license</option></term>
+				<listitem>
+					<para>Use the old license workflow (no CAL and hwId set to 0) (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/p</option>:<replaceable>password</replaceable></term>
+				<listitem>
+					<para>Password</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/parallel</option>[:<replaceable>name</replaceable>[,<replaceable>path</replaceable>]]</term>
+				<listitem>
+					<para>Redirect parallel device</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/parent-window</option>:<replaceable>window-id</replaceable></term>
+				<listitem>
+					<para>Parent window id</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/pcb</option>:<replaceable>blob</replaceable></term>
+				<listitem>
+					<para>Preconnection Blob</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/pcid</option>:<replaceable>id</replaceable></term>
+				<listitem>
+					<para>Preconnection Id</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/pheight</option>:<replaceable>height</replaceable></term>
+				<listitem>
+					<para>Physical height of display (in millimeters)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/play-rfx</option>:<replaceable>pcap-file</replaceable></term>
+				<listitem>
+					<para>Replay rfx pcap file</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/port</option>:<replaceable>number</replaceable></term>
+				<listitem>
+					<para>Server port</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-suppress-output</option></term>
+				<listitem>
+					<para>suppress output when minimized (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+print-reconnect-cookie</option></term>
+				<listitem>
+					<para>Print base64 reconnect cookie after connecting (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/printer</option>[:<replaceable>name</replaceable>[,<replaceable>driver</replaceable>]]</term>
+				<listitem>
+					<para>Redirect printer device</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/proxy</option>:[<replaceable>proto</replaceable>://][<replaceable>user</replaceable>:<replaceable>password</replaceable>@]<replaceable>host</replaceable>[:<replaceable>port</replaceable>]</term>
+				<listitem>
+					<para>Proxy settings: override env. var (see also environment variable below). Protocol &quot;socks5&quot; should be given explicitly where &quot;http&quot; is default.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/pth</option>:<replaceable>password-hash</replaceable></term>
+				<term><option>/pass-the-hash</option>:<replaceable>password-hash</replaceable></term>
+				<listitem>
+					<para>Pass the hash (restricted admin mode)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/pwidth</option>:<replaceable>width</replaceable></term>
+				<listitem>
+					<para>Physical width of display (in millimeters)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/rdp2tcp</option>:<replaceable>executable path[:arg...]</replaceable></term>
+				<listitem>
+					<para>TCP redirection</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/reconnect-cookie</option>:<replaceable>base64-cookie</replaceable></term>
+				<listitem>
+					<para>Pass base64 reconnect cookie to the connection</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/redirect-prefer</option>:<replaceable>FQDN|IP|NETBIOS</replaceable>,[...]</term>
+				<listitem>
+					<para>Override the preferred redirection order</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/relax-order-checks</option></term>
+				<term><option>/relax-order-checks</option></term>
+				<listitem>
+					<para>Do not check if a RDP order was announced during capability exchange, only use when connecting to a buggy server</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/restricted-admin</option></term>
+				<term><option>/restrictedAdmin</option></term>
+				<listitem>
+					<para>Restricted admin mode</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/rfx</option></term>
+				<listitem>
+					<para>RemoteFX</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/rfx-mode</option>:[image|video]</term>
+				<listitem>
+					<para>RemoteFX mode</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/scale</option>:[100|140|180]</term>
+				<listitem>
+					<para>Scaling factor of the display (default:100)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/scale-desktop</option>:<replaceable>percentage</replaceable></term>
+				<listitem>
+					<para>Scaling factor for desktop applications (value between 100 and 500) (default:100)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/scale-device</option>:100|140|180</term>
+				<listitem>
+					<para>Scaling factor for app store applications (default:100)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/sec</option>:[rdp[:[on|off]]|tls[:[on|off]]|nla[:[on|off]]|ext[:[on|off]]|aad[:[on|off]]]</term>
+				<listitem>
+					<para>Force specific protocol security. e.g. /sec:nla enables NLA and disables all others, while /sec:nla:[on|off] just toggles NLA</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/serial</option>[:<replaceable>name</replaceable>[,<replaceable>path</replaceable>[,<replaceable>driver</replaceable>[,permissive]]]]</term>
+				<term><option>/tty</option>[:<replaceable>name</replaceable>[,<replaceable>path</replaceable>[,<replaceable>driver</replaceable>[,permissive]]]]</term>
+				<listitem>
+					<para>Redirect serial device</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/server-name</option>:<replaceable>name</replaceable></term>
+				<listitem>
+					<para>User-specified server name to use for validation (TLS, Kerberos)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/shell</option>:<replaceable>shell</replaceable></term>
+				<listitem>
+					<para>Alternate shell</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/shell-dir</option>:<replaceable>dir</replaceable></term>
+				<listitem>
+					<para>Shell working directory</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/size</option>:<replaceable>width</replaceable>x<replaceable>height</replaceable> or <replaceable>percent</replaceable>%[wh]</term>
+				<listitem>
+					<para>Screen size (default:1024x768)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/smart-sizing</option>[:<replaceable>width</replaceable>x<replaceable>height</replaceable>]</term>
+				<listitem>
+					<para>Scale remote desktop to window size</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/smartcard</option>[:<replaceable>str</replaceable>[,<replaceable>str</replaceable>...]]</term>
+				<listitem>
+					<para>Redirect the smartcard devices containing any of the &lt;str&gt; in their names.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/smartcard-logon</option>[:[cert:<replaceable>path</replaceable>,key:<replaceable>key</replaceable>,pin:<replaceable>pin</replaceable>,csp:<replaceable>csp name</replaceable>,reader:<replaceable>reader</replaceable>,card:<replaceable>card</replaceable>]]</term>
+				<listitem>
+					<para>Activates Smartcard (optional certificate) Logon authentication.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/sound</option>[:[sys:<replaceable>sys</replaceable>,][dev:<replaceable>dev</replaceable>,][format:<replaceable>format</replaceable>,][rate:<replaceable>rate</replaceable>,][channel:<replaceable>channel</replaceable>,][latency:<replaceable>latency</replaceable>,][quality:<replaceable>quality</replaceable>]]</term>
+				<term><option>/audio</option>[:[sys:<replaceable>sys</replaceable>,][dev:<replaceable>dev</replaceable>,][format:<replaceable>format</replaceable>,][rate:<replaceable>rate</replaceable>,][channel:<replaceable>channel</replaceable>,][latency:<replaceable>latency</replaceable>,][quality:<replaceable>quality</replaceable>]]</term>
+				<listitem>
+					<para>Audio output (sound)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/span</option></term>
+				<listitem>
+					<para>Span screen over multiple monitors</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/spn-class</option>:<replaceable>service-class</replaceable></term>
+				<listitem>
+					<para>SPN authentication service class</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/ssh-agent</option></term>
+				<term><option>/ssh-agent</option></term>
+				<listitem>
+					<para>SSH Agent forwarding channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/sspi-module</option>:<replaceable>SSPI module path</replaceable></term>
+				<listitem>
+					<para>SSPI shared library module file path</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/winscard-module</option>:<replaceable>WinSCard module path</replaceable></term>
+				<listitem>
+					<para>WinSCard shared library module file path</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/disable-output</option></term>
+				<listitem>
+					<para>Deactivate all graphics decoding in the client session. Useful for load tests with many simultaneous connections</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/t</option>:<replaceable>title</replaceable></term>
+				<term><option>/title</option>:<replaceable>title</replaceable></term>
+				<listitem>
+					<para>Window title</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-themes</option></term>
+				<listitem>
+					<para>themes (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/timeout</option>:<replaceable>time in ms</replaceable></term>
+				<term><option>/timeout</option>:<replaceable>time in ms</replaceable></term>
+				<listitem>
+					<para>Advanced setting for high latency links: Adjust connection timeout, use if you encounter timeout failures with your connection (default:9000)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/tls</option>:[ciphers|seclevel|secrets-file|enforce]</term>
+				<listitem>
+					<para>TLS configuration options: * ciphers:[netmon|ma|&lt;cipher names&gt;]<sbr/> * seclevel:&lt;level&gt;, default: 1, range: [0-5] Override the default TLS security level, might be required for older target servers<sbr/> * secrets-file:&lt;filename&gt;<sbr/> * enforce[:[ssl3|1.0|1.1|1.2|1.3]] Force use of SSL/TLS version for a connection. Some servers have a buggy TLS version negotiation and might fail without this. Defaults to TLS 1.2 if no argument is supplied. Use 1.0 for windows 7</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-toggle-fullscreen</option></term>
+				<listitem>
+					<para>Alt+Ctrl+Enter to toggle fullscreen (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/tune</option>:<replaceable>setting:value</replaceable>,<replaceable>setting:value</replaceable></term>
+				<listitem>
+					<para>[experimental] directly manipulate freerdp settings, use with extreme caution! (default:)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/u</option>:[[<replaceable>domain</replaceable>\]<replaceable>user</replaceable>|<replaceable>user</replaceable>[@<replaceable>domain</replaceable>]]</term>
+				<listitem>
+					<para>Username</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+unmap-buttons</option></term>
+				<listitem>
+					<para>Let server see real physical pointer button (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/usb</option>:[dbg,][id:<replaceable>vid</replaceable>:<replaceable>pid</replaceable>#...,][addr:<replaceable>bus</replaceable>:<replaceable>addr</replaceable>#...,][auto]</term>
+				<listitem>
+					<para>Redirect USB device</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/v</option>:<replaceable>server</replaceable>[:port]</term>
+				<listitem>
+					<para>Server hostname</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/vc</option>:<replaceable>channel</replaceable>[,<replaceable>options</replaceable>]</term>
+				<listitem>
+					<para>Static virtual channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/version</option></term>
+				<listitem>
+					<para>Print version</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/video</option></term>
+				<listitem>
+					<para>Video optimized remoting channel</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/prevent-session-lock</option>[:<replaceable>time in sec</replaceable>]</term>
+				<listitem>
+					<para>Prevent session locking by injecting fake mouse motion events to the server when the connection is idle (default interval: 180 seconds)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/vmconnect</option>[:<replaceable>vmid</replaceable>]</term>
+				<listitem>
+					<para>Hyper-V console (use port 2179, disable negotiation)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/w</option>:<replaceable>width</replaceable></term>
+				<listitem>
+					<para>Width (default:1024)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>-wallpaper</option></term>
+				<listitem>
+					<para>wallpaper (default:on)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>+window-drag</option></term>
+				<listitem>
+					<para>full window drag (default:off)</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/window-position</option>:<replaceable>xpos</replaceable>x<replaceable>ypos</replaceable></term>
+				<listitem>
+					<para>window position</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/wm-class</option>:<replaceable>class-name</replaceable></term>
+				<listitem>
+					<para>Set the WM_CLASS hint for the window instance</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term><option>/workarea</option></term>
+				<listitem>
+					<para>Use available work area</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect1>

@@ -1,0 +1,182 @@
+Performing C SOURCE FILE Test CFLAG-Weverything failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_bdd79"
+[1/2] Building C object CMakeFiles/cmTC_bdd79.dir/src.c.o
+FAILED: CMakeFiles/cmTC_bdd79.dir/src.c.o 
+/usr/bin/cc   -DCFLAG-Weverything   -Weverything -std=gnu11 -o CMakeFiles/cmTC_bdd79.dir/src.c.o   -c src.c
+cc: error: unrecognized command line option '-Weverything'
+ninja: build stopped: subcommand failed.
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG-Wno-unsafe-buffer-usage failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_fedfb"
+[1/2] Building C object CMakeFiles/cmTC_fedfb.dir/src.c.o
+<command-line>: warning: ISO C99 requires whitespace after the macro name
+cc1: warning: unrecognized command line option '-Wno-unsafe-buffer-usage'
+[2/2] Linking C executable cmTC_fedfb
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG-Wno-reserved-identifier failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_8b1de"
+[1/2] Building C object CMakeFiles/cmTC_8b1de.dir/src.c.o
+<command-line>: warning: ISO C99 requires whitespace after the macro name
+cc1: warning: unrecognized command line option '-Wno-reserved-identifier'
+[2/2] Linking C executable cmTC_8b1de
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG-Wno-covered-switch-default failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_99395"
+[1/2] Building C object CMakeFiles/cmTC_99395.dir/src.c.o
+<command-line>: warning: ISO C99 requires whitespace after the macro name
+cc1: warning: unrecognized command line option '-Wno-covered-switch-default'
+[2/2] Linking C executable cmTC_99395
+
+Source file was:
+int main(void) { return 0; }
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_c6e82"
+[1/2] Building C object CMakeFiles/cmTC_c6e82.dir/CheckSymbolExists.c.o
+CheckSymbolExists.c: In function ‘main’:
+CheckSymbolExists.c:8:11: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
+   return ((int*)(&pthread_create))[argc];
+           ^
+[2/2] Linking C executable cmTC_c6e82
+FAILED: cmTC_c6e82 
+: && /usr/bin/cc -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls   CMakeFiles/cmTC_c6e82.dir/CheckSymbolExists.c.o  -o cmTC_c6e82   && :
+/usr/bin/ld: CMakeFiles/cmTC_c6e82.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x14): undefined reference to `pthread_create'
+/usr/bin/ld: CheckSymbolExists.c:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_6a3e0"
+[1/2] Building C object CMakeFiles/cmTC_6a3e0.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_6a3e0
+FAILED: cmTC_6a3e0 
+: && /usr/bin/cc -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_6a3e0.dir/CheckFunctionExists.c.o  -o cmTC_6a3e0  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Determining if files sys/filio.h exist failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_e023b"
+[1/2] Building C object CMakeFiles/cmTC_e023b.dir/WINPR_HAVE_SYS_FILIO_H.c.o
+FAILED: CMakeFiles/cmTC_e023b.dir/WINPR_HAVE_SYS_FILIO_H.c.o 
+/usr/bin/cc   -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -fno-omit-frame-pointer  -fPIE   -std=gnu11 -o CMakeFiles/cmTC_e023b.dir/WINPR_HAVE_SYS_FILIO_H.c.o   -c /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/WINPR_HAVE_SYS_FILIO_H.c
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/WINPR_HAVE_SYS_FILIO_H.c:2:10: fatal error: sys/filio.h: 没有那个文件或目录
+ #include <sys/filio.h>
+          ^~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+Source:
+/* */
+#include <sys/filio.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/sockio.h exist failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_bad7a"
+[1/2] Building C object CMakeFiles/cmTC_bad7a.dir/WINPR_HAVE_SYS_SOCKIO_H.c.o
+FAILED: CMakeFiles/cmTC_bad7a.dir/WINPR_HAVE_SYS_SOCKIO_H.c.o 
+/usr/bin/cc   -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -fno-omit-frame-pointer  -fPIE   -std=gnu11 -o CMakeFiles/cmTC_bad7a.dir/WINPR_HAVE_SYS_SOCKIO_H.c.o   -c /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/WINPR_HAVE_SYS_SOCKIO_H.c
+/home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/WINPR_HAVE_SYS_SOCKIO_H.c:2:10: fatal error: sys/sockio.h: 没有那个文件或目录
+ #include <sys/sockio.h>
+          ^~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+Source:
+/* */
+#include <sys/sockio.h>
+
+
+int main(void){return 0;}
+
+Determining if the function pthread_mutex_timedlock exists in the pthreads failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_b6c0f"
+[1/2] Building C object CMakeFiles/cmTC_b6c0f.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_b6c0f
+FAILED: cmTC_b6c0f 
+: && /usr/bin/cc -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -fno-omit-frame-pointer -DCHECK_FUNCTION_EXISTS=pthread_mutex_timedlock   CMakeFiles/cmTC_b6c0f.dir/CheckFunctionExists.c.o  -o cmTC_b6c0f  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Determining if the function pthread_setschedprio exists failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_20c62"
+[1/2] Building C object CMakeFiles/cmTC_20c62.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_20c62
+FAILED: cmTC_20c62 
+: && /usr/bin/cc -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -fno-omit-frame-pointer -DWINPR_DLL -DCHECK_FUNCTION_EXISTS=pthread_setschedprio   CMakeFiles/cmTC_20c62.dir/CheckFunctionExists.c.o  -o cmTC_20c62  -lrt && :
+/usr/bin/ld: CMakeFiles/cmTC_20c62.dir/CheckFunctionExists.c.o: undefined reference to symbol 'pthread_setschedprio@@GLIBC_2.17'
+/usr/bin/ld: //lib/aarch64-linux-gnu/libpthread.so.0: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Determining if files ctype.h;linux/vm_sockets.h exist failed with the following output:
+Change Dir: /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_faf03"
+[1/2] Building C object CMakeFiles/cmTC_faf03.dir/HAVE_AF_VSOCK_H.c.o
+FAILED: CMakeFiles/cmTC_faf03.dir/HAVE_AF_VSOCK_H.c.o 
+/usr/bin/cc   -Wall -Wpedantic -Wno-padded -Wno-cast-align -Wno-declaration-after-statement -Wall -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -fno-omit-frame-pointer  -fPIE   -std=gnu11 -o CMakeFiles/cmTC_faf03.dir/HAVE_AF_VSOCK_H.c.o   -c /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/HAVE_AF_VSOCK_H.c
+In file included from /home/bai/Desktop/freerdp-3.6.2/freerdp-build/CMakeFiles/CheckIncludeFiles/HAVE_AF_VSOCK_H.c:3:
+/usr/include/linux/vm_sockets.h:149:32: error: invalid application of ‘sizeof’ to incomplete type ‘struct sockaddr’
+  unsigned char svm_zero[sizeof(struct sockaddr) -
+                                ^~~~~~
+/usr/include/linux/vm_sockets.h:150:18: error: ‘sa_family_t’ undeclared here (not in a function)
+           sizeof(sa_family_t) -
+                  ^~~~~~~~~~~
+ninja: build stopped: subcommand failed.
+
+Source:
+/* */
+#include <ctype.h>
+#include <linux/vm_sockets.h>
+
+
+int main(void){return 0;}
+
